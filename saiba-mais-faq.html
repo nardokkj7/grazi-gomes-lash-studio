@@ -1,0 +1,859 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#080706">
+    <meta name="description" content="Saiba mais sobre os procedimentos, cuidados, manutenção e agendamentos do Grazi Gomes Lash Studio.">
+
+    <title>Saiba Mais | Grazi Gomes Lash Studio</title>
+
+    <!-- FONTES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS PRINCIPAL -->
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        /* ==============================
+           SAIBA MAIS
+        ============================== */
+
+        .learn-page {
+            background: #080706;
+        }
+
+        /* CABEÇALHO */
+
+        .learn-page .header {
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(212,175,55,0.15);
+        }
+
+        .learn-page .logo img {
+            max-height: 55px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        /* HERO */
+
+        .learn-hero {
+            text-align: center;
+            padding: 100px 20px 85px;
+            background:
+                radial-gradient(
+                    ellipse at 50% 0%,
+                    rgba(212,175,55,0.12),
+                    transparent 65%
+                ),
+                #080706;
+            border-bottom: 1px solid rgba(212,175,55,0.15);
+        }
+
+        .learn-hero .eyebrow {
+            color: #c5a059;
+            letter-spacing: 3px;
+        }
+
+        .learn-hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            color: #d4af37;
+            font-size: clamp(3rem, 7vw, 5rem);
+            font-weight: 500;
+            line-height: 1.08;
+            margin: 18px 0;
+        }
+
+        .learn-hero p {
+            max-width: 650px;
+            margin: auto;
+            color: #bcbcbc;
+            font-size: 1.02rem;
+            line-height: 1.9;
+        }
+
+        .learn-hero .decoration {
+            display: block;
+            margin-top: 25px;
+            color: #d4af37;
+            font-size: 25px;
+        }
+
+        /* CONTEÚDO */
+
+        .learn-content {
+            max-width: 1000px;
+            margin: auto;
+            padding: 75px 20px 100px;
+        }
+
+        /* CATEGORIAS */
+
+        .learn-category {
+            margin-bottom: 55px;
+        }
+
+        .learn-category-heading {
+            margin-bottom: 25px;
+        }
+
+        .learn-category-heading span {
+            display: block;
+            color: #c5a059;
+            font-size: .78rem;
+            letter-spacing: 2.5px;
+            margin-bottom: 8px;
+        }
+
+        .learn-category-heading h2 {
+            font-family: 'Cormorant Garamond', serif;
+            color: #d4af37;
+            font-size: 2.5rem;
+            font-weight: 500;
+        }
+
+        /* CARDS */
+
+        .learn-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .learn-card {
+            background: linear-gradient(
+                145deg,
+                rgba(255,255,255,0.035),
+                rgba(255,255,255,0.01)
+            );
+            border: 1px solid rgba(212,175,55,0.19);
+            border-radius: 10px;
+            padding: 28px;
+            transition: .3s ease;
+        }
+
+        .learn-card:hover {
+            border-color: rgba(212,175,55,0.5);
+            transform: translateY(-3px);
+        }
+
+        .learn-card .card-icon {
+            color: #d4af37;
+            font-size: 23px;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .learn-card h3 {
+            color: #e4c56e;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.65rem;
+            font-weight: 500;
+            margin-bottom: 12px;
+        }
+
+        .learn-card p {
+            color: #bcbcbc;
+            font-size: .94rem;
+            line-height: 1.85;
+        }
+
+        .learn-card strong {
+            color: #d4af37;
+        }
+
+        /* DESTAQUE */
+
+        .learn-notice {
+            background: rgba(212,175,55,0.055);
+            border-left: 3px solid #d4af37;
+            border-radius: 0 9px 9px 0;
+            padding: 24px 28px;
+            margin-top: 22px;
+        }
+
+        .learn-notice h3 {
+            color: #d4af37;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.55rem;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .learn-notice p {
+            color: #c5c5c5;
+            font-size: .93rem;
+            line-height: 1.8;
+        }
+
+        /* CHAMADA FINAL */
+
+        .learn-final {
+            text-align: center;
+            padding: 60px 20px;
+            background:
+                radial-gradient(
+                    ellipse at center,
+                    rgba(212,175,55,0.08),
+                    transparent 70%
+                );
+            border-top: 1px solid rgba(212,175,55,0.15);
+        }
+
+        .learn-final .eyebrow {
+            color: #c5a059;
+            letter-spacing: 2px;
+        }
+
+        .learn-final h2 {
+            color: #d4af37;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.4rem, 5vw, 3.5rem);
+            font-weight: 500;
+            margin: 15px 0;
+        }
+
+        .learn-final p {
+            color: #bcbcbc;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        .learn-final .gold-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* RESPONSIVIDADE */
+
+        @media (max-width: 700px) {
+
+            .learn-hero {
+                padding: 75px 20px 65px;
+            }
+
+            .learn-content {
+                padding: 55px 18px 70px;
+            }
+
+            .learn-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .learn-category {
+                margin-bottom: 40px;
+            }
+
+            .learn-category-heading h2 {
+                font-size: 2.1rem;
+            }
+
+            .learn-card {
+                padding: 25px 22px;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body class="learn-page">
+
+    <!-- CABEÇALHO -->
+
+    <header class="header">
+
+        <div class="container header-content">
+
+            <a href="index.html#inicio" class="logo">
+                <img src="../assets/logo.png" alt="Grazi Gomes Lash Studio">
+            </a>
+
+            <nav class="navigation" id="navigation">
+
+                <a href="index.html#inicio">Início</a>
+                <a href="index.html#sobre">Sobre</a>
+                <a href="index.html#servicos">Serviços</a>
+                <a href="index.html#depoimentos">Depoimentos</a>
+                <a href="index.html#contato">Contato</a>
+
+            </nav>
+
+            <a href="#contato" class="header-button">
+                Agendar horário
+            </a>
+
+            <button class="menu-toggle" id="menu-toggle"
+                aria-label="Abrir menu"
+                aria-expanded="false">
+
+                ☰
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <!-- APRESENTAÇÃO -->
+
+        <section class="learn-hero">
+
+            <span class="eyebrow">
+                GRAZI GOMES LASH STUDIO
+            </span>
+
+            <h1>
+                Conheça mais<br>
+                sobre nosso trabalho.
+            </h1>
+
+            <p>
+                Queremos que você se sinta segura e confiante
+                antes de escolher seu procedimento.
+                Aqui você encontra informações sobre nossas técnicas,
+                cuidados, manutenção e agendamentos.
+            </p>
+
+            <span class="decoration">✧</span>
+
+        </section>
+
+
+        <section class="learn-content">
+
+
+            <!-- 01. PROCEDIMENTOS -->
+
+            <div class="learn-category">
+
+                <div class="learn-category-heading">
+
+                    <span>01 — NOSSAS TÉCNICAS</span>
+
+                    <h2>Conheça os procedimentos</h2>
+
+                </div>
+
+
+                <div class="learn-grid">
+
+                    <article class="learn-card">
+
+                        <span class="card-icon">✧</span>
+
+                        <h3>Fio a Fio</h3>
+
+                        <p>
+                            Uma técnica que busca proporcionar
+                            um resultado mais delicado e natural,
+                            valorizando o olhar sem perder a elegância.
+                            Ideal para quem prefere um efeito discreto.
+                        </p>
+
+                    </article>
+
+
+                    <article class="learn-card">
+
+                        <span class="card-icon">✧</span>
+
+                        <h3>Tufos de Seda</h3>
+
+                        <p>
+                            Uma opção para quem deseja mais destaque
+                            e volume no olhar. Os tufos proporcionam
+                            um resultado marcante, com acabamento
+                            pensado para valorizar seus olhos.
+                        </p>
+
+                    </article>
+
+
+                    <article class="learn-card">
+
+                        <span class="card-icon">✧</span>
+
+                        <h3>Tufos de Nó</h3>
+
+                        <p>
+                            Técnica que proporciona um visual
+                            mais encorpado e intenso, ideal para
+                            quem gosta de cílios com maior destaque.
+                        </p>
+
+                    </article>
+
+
+                    <article class="learn-card">
+
+                        <span class="card-icon">✧</span>
+
+                        <h3>Volume Brasileiro</h3>
+
+                        <p>
+                            Uma técnica que combina volume,
+                            definição e destaque, proporcionando
+                            um olhar expressivo e sofisticado.
+                        </p>
+
+                    </article>
+
+                </div>
+
+                <div class="learn-notice">
+
+                    <h3>Qual técnica escolher?</h3>
+
+                    <p>
+                        A escolha depende do resultado que você deseja.
+                        Se estiver em dúvida, converse com a Grazi
+                        pelo WhatsApp para receber orientação
+                        sobre as opções disponíveis.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- 02. DURABILIDADE E MANUTENÇÃO -->
+
+            <div class="learn-category">
+
+                <div class="learn-category-heading">
+
+                    <span>02 — DURABILIDADE</span>
+
+                    <h2>Manutenção dos cílios</h2>
+
+                </div>
+
+
+                <div class="learn-grid">
+
+                    <article class="learn-card">
+
+                        <span class="card-icon">♡</span>
+
+                        <h3>Quanto tempo dura?</h3>
+
+                        <p>
+                            A durabilidade varia de acordo com a técnica,
+                            os produtos utilizados, o ciclo natural
+                            dos fios e os cuidados após o procedimento.
+                            Cada cliente pode apresentar resultados diferentes.
+                        </p>
+
+                    </article>
+
+
+                    <article class="learn-card">
+
+                        <span class="card-icon">♡</span>
+
+                        <h3>Preciso fazer manutenção?</h3>
+
+                        <p>
+                            A manutenção ajuda a preservar a aparência
+                            dos cílios e acompanhar a renovação natural
+                            dos fios. O intervalo recomendado deve ser
+                            avaliado pela profissional.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+
+            <!-- 03. CUIDADOS -->
+
+            <div class="learn-category">
+
+                <div class="learn-category-heading">
+
+                    <span>03 — CUIDADOS ESPECIAIS</span>
+
+                    <h2>Cuide dos seus cílios</h2>
+
+                </div>
+
+
+                <div class="learn-grid">
+
+                    <article class="learn-card">
+
+                        <span class="card-icon">✧</span>
+
+                        <h3>Posso molhar os cílios?</h3>
+
+                        <p>
+                            Os cuidados com a água após a aplicação
+                            dependem dos produtos utilizados.
+                            Siga as orientações fornecidas pela Grazi
+                            durante o atendimento.
+                        </p>
+
+                    </article>
+
+
+                    <article class="learn-card">
+
+                        <span class="card-icon">✧</span>
+
+                        <h3>Como higienizar?</h3>
+
+                        <p>
+                            Mantenha uma rotina adequada de higienização,
+                            utilizando produtos indicados para a região
+                            dos olhos e seguindo as recomendações
+                            da profissional.
+                        </p>
+
+                    </article>
+
+
+                    <article class="learn-card">
+
+                        <span class="card-icon">✧</span>
+
+                        <h3>O que evitar?</h3>
+
+                        <p>
+                            Evite esfregar ou puxar os cílios,
+                            utilizar produtos inadequados na região
+                            e realizar procedimentos por conta própria.
+                        </p>
+
+                    </article>
+
+
+                    <article class="learn-card">
+
+                        <span class="card-icon">✧</span>
+
+                        <h3>Como chegar preparada?</h3>
+
+                        <p>
+                            Compareça ao atendimento sem maquiagem,
+                            rímel ou produtos nos cílios e no rosto,
+                            facilitando a preparação para o procedimento.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+
+            <!-- 04. AGENDAMENTO -->
+
+            <div class="learn-category">
+
+                <div class="learn-category-heading">
+
+                    <span>04 — RESERVAS</span>
+
+                    <h2>Informações de agendamento</h2>
+
+                </div>
+
+
+                <div class="learn-grid">
+
+                    <article class="learn-card">
+
+                        <span class="card-icon">♡</span>
+
+                        <h3>Como agendar?</h3>
+
+                        <p>
+                            Entre em contato pelo WhatsApp e informe
+                            a data desejada, o horário de preferência
+                            e o procedimento escolhido.
+                            Aguarde a confirmação da disponibilidade.
+                        </p>
+
+                    </article>
+
+
+                    <article class="learn-card">
+
+                        <span class="card-icon">♡</span>
+
+                        <h3>É necessário pagar sinal?</h3>
+
+                        <p>
+                            Sim. Para reservar seu horário é solicitado
+                            um sinal de <strong>R$ 20,00</strong>,
+                            que será descontado do valor final
+                            do procedimento.
+                        </p>
+
+                    </article>
+
+
+                    <article class="learn-card">
+
+                        <span class="card-icon">♡</span>
+
+                        <h3>Posso remarcar?</h3>
+
+                        <p>
+                            Sim! Remarcações e cancelamentos devem
+                            ser comunicados com pelo menos
+                            <strong>48 horas de antecedência</strong>.
+                            Faltas ou cancelamentos em cima da hora
+                            resultam na perda do sinal.
+                        </p>
+
+                    </article>
+
+
+                    <article class="learn-card">
+
+                        <span class="card-icon">♡</span>
+
+                        <h3>Qual a tolerância de atraso?</h3>
+
+                        <p>
+                            Nossa tolerância é de
+                            <strong>15 minutos</strong>.
+                            Após esse período, o atendimento poderá
+                            ser cancelado e o sinal não será devolvido,
+                            conforme as regras de agendamento.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+
+            <!-- 05. PAGAMENTO E LOCALIZAÇÃO -->
+
+            <div class="learn-category">
+
+                <div class="learn-category-heading">
+
+                    <span>05 — INFORMAÇÕES IMPORTANTES</span>
+
+                    <h2>Pagamento e localização</h2>
+
+                </div>
+
+
+                <div class="learn-grid">
+
+                    <article class="learn-card">
+
+                        <span class="card-icon">✧</span>
+
+                        <h3>Formas de pagamento</h3>
+
+                        <p>
+                            Para facilitar seu atendimento,
+                            aceitamos:<br><br>
+
+                            <strong>✧ Pix</strong><br>
+                            <strong>✧ Dinheiro</strong>
+                        </p>
+
+                    </article>
+
+
+                    <article class="learn-card">
+
+                        <span class="card-icon">✧</span>
+
+                        <h3>Onde estamos?</h3>
+
+                        <p>
+                            O Grazi Gomes Lash Studio está localizado em:<br><br>
+
+                            <strong>Rua Diamante, 91</strong><br>
+                            Jardim Paraíso.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- CHAMADA FINAL -->
+
+        <section class="learn-final" id="contato">
+
+            <span class="eyebrow">
+                SEU OLHAR MERECE ESSE CUIDADO
+            </span>
+
+            <h2>Pronta para realçar sua beleza?</h2>
+
+            <p>
+                Agora que você conhece melhor nossos procedimentos,
+                será um prazer receber você no studio.
+            </p>
+
+            <a
+                href="https://wa.me/5521981272606?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio%20no%20Grazi%20Gomes%20Lash%20Studio!"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="gold-button">
+
+                Agendar pelo WhatsApp
+                <span>→</span>
+
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- RODAPÉ -->
+
+    <footer class="footer">
+
+        <div class="container footer-content">
+
+            <a href="index.html#inicio" class="footer-brand">
+
+                <img src="../assets/logo.png" alt="Grazi Gomes Lash Studio">
+
+                <span>
+                    GRAZI GOMES
+                    <small>LASH STUDIO</small>
+                </span>
+
+            </a>
+
+
+            <div class="footer-links">
+
+                <a href="index.html#inicio">Início</a>
+                <a href="index.html#sobre">Sobre</a>
+                <a href="index.html#servicos">Serviços</a>
+                <a href="index.html#contato">Contato</a>
+
+            </div>
+
+
+            <p class="copyright">
+                © 2026 Grazi Gomes Lash Studio.
+                Todos os direitos reservados.
+            </p>
+
+
+            <a href="#" class="developer">
+                Desenvolvido por <strong>KERVØ Studio</strong>
+            </a>
+
+        </div>
+
+    </footer>
+
+
+    <!-- MENU MOBILE -->
+
+    <script>
+
+        const menuToggle = document.getElementById('menu-toggle');
+        const navigation = document.getElementById('navigation');
+
+        menuToggle.addEventListener('click', () => {
+
+            const active = navigation.classList.toggle('active');
+
+            menuToggle.setAttribute('aria-expanded', active);
+
+        });
+
+        navigation.querySelectorAll('a').forEach(link => {
+
+            link.addEventListener('click', () => {
+
+                navigation.classList.remove('active');
+
+                menuToggle.setAttribute('aria-expanded', 'false');
+
+            });
+
+        });
+
+    </script>
+
+
+    <!-- WHATSAPP FLUTUANTE -->
+
+    <a
+        href="https://wa.me/5521981272606?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio!"
+        class="whatsapp-float"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="WhatsApp">
+
+        <span style="font-size:30px;">☏</span>
+
+    </a>
+
+
+    <!-- INSTAGRAM FLUTUANTE -->
+
+    <a
+        href="https://www.instagram.com/grazi.lashesbeauty/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Instagram"
+        style="
+            position:fixed;
+            bottom:105px;
+            right:25px;
+            width:65px;
+            height:65px;
+            background:linear-gradient(45deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5);
+            color:white;
+            border-radius:50%;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            text-decoration:none;
+            z-index:999999;
+            box-shadow:0 4px 15px rgba(0,0,0,0.3);
+        ">
+
+        <svg width="34" height="34" viewBox="0 0 24 24"
+            fill="none" stroke="white" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+
+            <rect x="3" y="3" width="18" height="18" rx="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17.5" cy="6.5" r="0.8" fill="white"/>
+
+        </svg>
+
+    </a>
+
+</body>
+</html>

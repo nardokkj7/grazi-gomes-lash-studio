@@ -1,0 +1,973 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#080706">
+    <meta name="description" content="Confira a agenda de dezembro e fim de ano do Grazi Gomes Lash Studio. Datas, horários e informações para agendar.">
+
+    <title>Agenda de Dezembro | Grazi Gomes Lash Studio</title>
+
+    <!-- FONTES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- ESTILO PRINCIPAL -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- ESTILOS EXCLUSIVOS DA AGENDA -->
+    <style>
+
+        /* ==============================
+           PÁGINA DE AGENDAMENTO
+        ============================== */
+
+        .agenda-page {
+            background: #080706;
+            min-height: 100vh;
+        }
+
+        /* CABEÇALHO */
+
+        .agenda-page .header {
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(212,175,55,0.15);
+        }
+
+        .agenda-page .logo img {
+            max-height: 55px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        /* APRESENTAÇÃO */
+
+        .agenda-hero {
+            position: relative;
+            padding: 105px 20px 90px;
+            text-align: center;
+            overflow: hidden;
+            background:
+                radial-gradient(
+                    ellipse at 50% 0%,
+                    rgba(212,175,55,0.11),
+                    transparent 65%
+                ),
+                #080706;
+        }
+
+        .agenda-hero::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 10%;
+            width: 80%;
+            height: 1px;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(212,175,55,0.35),
+                transparent
+            );
+        }
+
+        .agenda-hero .eyebrow {
+            color: #c5a059;
+            letter-spacing: 3px;
+        }
+
+        .agenda-hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            color: #d4af37;
+            font-size: clamp(3rem, 7vw, 5.2rem);
+            font-weight: 500;
+            line-height: 1.05;
+            margin: 18px 0;
+        }
+
+        .agenda-hero p {
+            max-width: 620px;
+            margin: 0 auto;
+            color: #bcbcbc;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .agenda-decoration {
+            display: block;
+            color: #d4af37;
+            font-size: 25px;
+            margin-top: 25px;
+        }
+
+        /* CONTEÚDO */
+
+        .agenda-content {
+            max-width: 1050px;
+            margin: auto;
+            padding: 75px 20px 100px;
+        }
+
+        .agenda-box {
+            position: relative;
+            background: linear-gradient(
+                145deg,
+                rgba(255,255,255,0.035),
+                rgba(255,255,255,0.012)
+            );
+            border: 1px solid rgba(212,175,55,0.19);
+            border-radius: 12px;
+            padding: 42px;
+            margin-bottom: 30px;
+            box-shadow: 0 12px 35px rgba(0,0,0,0.22);
+            transition: border-color .3s ease, transform .3s ease;
+        }
+
+        .agenda-box:hover {
+            border-color: rgba(212,175,55,0.38);
+        }
+
+        .agenda-box-heading {
+            margin-bottom: 28px;
+        }
+
+        .agenda-box-heading .eyebrow {
+            display: block;
+            margin-bottom: 8px;
+            color: #c5a059;
+            font-size: .78rem;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+        }
+
+        .agenda-box-heading h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.9rem, 4vw, 2.5rem);
+            font-weight: 500;
+            line-height: 1.15;
+            color: #d4af37;
+            margin: 0;
+        }
+
+        .agenda-description {
+            color: #bcbcbc;
+            font-size: .98rem;
+            line-height: 1.8;
+            margin-top: 12px;
+        }
+
+        /* CARDS */
+
+        .agenda-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 20px;
+        }
+
+        .agenda-item {
+            background: rgba(0,0,0,0.35);
+            border: 1px solid rgba(212,175,55,0.17);
+            border-radius: 9px;
+            padding: 30px 25px;
+            text-align: center;
+            transition: all .3s ease;
+        }
+
+        .agenda-item:hover {
+            transform: translateY(-4px);
+            border-color: rgba(212,175,55,0.5);
+            background: rgba(212,175,55,0.045);
+        }
+
+        .agenda-item-label {
+            display: block;
+            color: #999;
+            font-size: .76rem;
+            letter-spacing: 1.7px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .agenda-item h3 {
+            font-family: 'Cormorant Garamond', serif;
+            color: #d4af37;
+            font-size: 2.3rem;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        .agenda-item p {
+            color: #bcbcbc;
+            font-size: .94rem;
+            line-height: 1.7;
+        }
+
+        /* AVISO */
+
+        .agenda-notice {
+            margin-top: 25px;
+            padding: 22px 25px;
+            background: rgba(212,175,55,0.055);
+            border-left: 3px solid #d4af37;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .agenda-notice p {
+            color: #d0d0d0;
+            font-size: .94rem;
+            line-height: 1.8;
+            margin-bottom: 8px;
+        }
+
+        .agenda-notice p:last-child {
+            margin-bottom: 0;
+        }
+
+        .agenda-notice strong {
+            color: #d4af37;
+        }
+
+        /* LISTAS */
+
+        .agenda-text-list {
+            list-style: none;
+            padding: 0;
+            margin: 22px 0 0;
+        }
+
+        .agenda-text-list li {
+            position: relative;
+            padding-left: 27px;
+            margin-bottom: 17px;
+            color: #c9c9c9;
+            font-size: .98rem;
+            line-height: 1.8;
+        }
+
+        .agenda-text-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        .agenda-text-list li::before {
+            content: "✧";
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: #d4af37;
+            font-size: 17px;
+        }
+
+        .agenda-text-list strong {
+            color: #f0d58a;
+            font-weight: 600;
+        }
+
+        /* EXEMPLO DE MENSAGEM */
+
+        .agenda-example {
+            margin-top: 25px;
+            padding: 23px;
+            background: #050504;
+            border: 1px dashed rgba(212,175,55,0.35);
+            border-radius: 8px;
+            color: #dedede;
+            font-family: 'DM Sans', sans-serif;
+            font-size: .93rem;
+            line-height: 1.9;
+        }
+
+        .agenda-example span {
+            display: block;
+            color: #d4af37;
+            margin-bottom: 7px;
+            font-size: .8rem;
+            text-transform: uppercase;
+            letter-spacing: 1.3px;
+        }
+
+        /* PAGAMENTO E ENDEREÇO */
+
+        .agenda-item.align-left {
+            text-align: left;
+        }
+
+        .agenda-item.align-left h3 {
+            font-size: 1.65rem;
+            margin-bottom: 15px;
+        }
+
+        /* BOTÃO FINAL */
+
+        .agenda-final {
+            text-align: center;
+            padding: 45px 20px 15px;
+        }
+
+        .agenda-final .eyebrow {
+            color: #c5a059;
+        }
+
+        .agenda-final h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.3rem, 5vw, 3.4rem);
+            font-weight: 500;
+            color: #d4af37;
+            margin: 12px 0;
+        }
+
+        .agenda-final p {
+            color: #bcbcbc;
+            margin-bottom: 28px;
+            line-height: 1.7;
+        }
+
+        .agenda-final .gold-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        /* RODAPÉ */
+
+        .agenda-page .footer {
+            border-top: 1px solid rgba(212,175,55,0.15);
+        }
+
+        /* RESPONSIVIDADE */
+
+        @media (max-width: 768px) {
+
+            .agenda-hero {
+                padding: 75px 20px 65px;
+            }
+
+            .agenda-hero h1 {
+                font-size: 3.3rem;
+            }
+
+            .agenda-content {
+                padding: 50px 18px 75px;
+            }
+
+            .agenda-box {
+                padding: 28px 22px;
+                margin-bottom: 22px;
+            }
+
+            .agenda-box-heading {
+                margin-bottom: 23px;
+            }
+
+            .agenda-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .agenda-item {
+                padding: 25px 20px;
+            }
+
+            .agenda-item h3 {
+                font-size: 2rem;
+            }
+
+            .agenda-final {
+                padding-top: 30px;
+            }
+
+            .agenda-page .header {
+                padding: 15px 0;
+            }
+        }
+
+        @media (max-width: 420px) {
+
+            .agenda-hero h1 {
+                font-size: 2.8rem;
+            }
+
+            .agenda-hero p {
+                font-size: .95rem;
+            }
+
+            .agenda-box {
+                padding: 24px 18px;
+            }
+
+            .agenda-box-heading h2 {
+                font-size: 1.9rem;
+            }
+
+            .agenda-text-list li {
+                font-size: .93rem;
+            }
+
+            .agenda-example {
+                padding: 17px;
+                font-size: .85rem;
+            }
+        }
+
+    </style>
+</head>
+
+<body class="agenda-page">
+
+    <!-- ==============================
+         CABEÇALHO
+    ============================== -->
+
+    <header class="header">
+
+        <div class="container header-content">
+
+            <a href="index.html#inicio" class="logo">
+                <img src="../assets/logo.png" alt="Grazi Gomes Lash Studio">
+            </a>
+
+            <nav class="navigation" id="navigation">
+
+                <a href="index.html#inicio">Início</a>
+                <a href="index.html#sobre">Sobre</a>
+                <a href="index.html#servicos">Serviços</a>
+                <a href="index.html#depoimentos">Depoimentos</a>
+                <a href="index.html#contato">Contato</a>
+
+            </nav>
+
+            <a href="#agendar" class="header-button">
+                Agendar horário
+            </a>
+
+            <button
+                class="menu-toggle"
+                id="menu-toggle"
+                aria-label="Abrir menu"
+                aria-expanded="false">
+
+                ☰
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <!-- ==============================
+             APRESENTAÇÃO DA AGENDA
+        ============================== -->
+
+        <section class="agenda-hero">
+
+            <span class="eyebrow">
+                PLANEJAMENTO EXCLUSIVO
+            </span>
+
+            <h1>
+                Agenda de<br>Dezembro
+            </h1>
+
+            <p>
+                O fim de ano merece um olhar especial.
+                Confira nosso cronograma, horários e informações
+                importantes para garantir seu atendimento
+                no Grazi Gomes Lash Studio.
+            </p>
+
+            <span class="agenda-decoration">✧</span>
+
+        </section>
+
+
+        <section class="agenda-content">
+
+
+            <!-- 01. ABERTURA DA AGENDA -->
+
+            <div class="agenda-box">
+
+                <div class="agenda-box-heading">
+
+                    <span class="eyebrow">01 — CRONOGRAMA</span>
+
+                    <h2>Abertura da Agenda</h2>
+
+                    <p class="agenda-description">
+                        Organizamos a abertura dos horários em duas etapas
+                        para oferecer prioridade às nossas clientes recorrentes.
+                    </p>
+
+                </div>
+
+
+                <div class="agenda-grid">
+
+                    <div class="agenda-item">
+
+                        <span class="agenda-item-label">
+                            Clientes Fixas
+                        </span>
+
+                        <h3>08 / 11</h3>
+
+                        <p>
+                            Para quem possui recorrência ativa
+                            nos últimos 2 meses.
+                        </p>
+
+                    </div>
+
+
+                    <div class="agenda-item">
+
+                        <span class="agenda-item-label">
+                            Clientes Novas
+                        </span>
+
+                        <h3>15 / 11</h3>
+
+                        <p>
+                            Previsão de abertura após o atendimento
+                            das clientes fixas.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="agenda-notice">
+
+                    <p>
+                        <strong>Importante:</strong>
+                        A agenda para clientes novas só será liberada
+                        após todas as clientes fixas estarem devidamente
+                        agendadas, garantindo organização e qualidade.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- 02. HORÁRIOS -->
+
+            <div class="agenda-box">
+
+                <div class="agenda-box-heading">
+
+                    <span class="eyebrow">02 — DISPONIBILIDADE</span>
+
+                    <h2>Dias e Horários de Atendimento</h2>
+
+                    <p class="agenda-description">
+                        Confira os períodos de funcionamento durante
+                        o mês de dezembro.
+                    </p>
+
+                </div>
+
+
+                <div class="agenda-grid">
+
+                    <div class="agenda-item">
+
+                        <span class="agenda-item-label">
+                            Primeiro período
+                        </span>
+
+                        <h3>01/12 — 18/12</h3>
+
+                        <p style="font-size:1.2rem;color:#fff;font-weight:600;">
+                            08H às 18H
+                        </p>
+
+                    </div>
+
+
+                    <div class="agenda-item">
+
+                        <span class="agenda-item-label">
+                            Segundo período
+                        </span>
+
+                        <h3>19/12 — 30/12</h3>
+
+                        <p style="font-size:1.2rem;color:#fff;font-weight:600;">
+                            07H às 22H
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="agenda-notice">
+
+                    <p>
+                        🌙 <strong>Horários especiais:</strong>
+                        Para turnos de madrugada ou manhãs bem cedo,
+                        entre em contato diretamente pelo WhatsApp.
+                    </p>
+
+                    <p>
+                        🎁 <strong>Bônus especial:</strong>
+                        Agendamentos feitos em dezembro para manutenção
+                        em janeiro ganham <strong>10% de desconto!</strong>
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- 03. COMO AGENDAR -->
+
+            <div class="agenda-box">
+
+                <div class="agenda-box-heading">
+
+                    <span class="eyebrow">03 — PASSO A PASSO</span>
+
+                    <h2>Como Agendar seu Horário</h2>
+
+                    <p class="agenda-description">
+                        Para facilitar seu atendimento, envie uma mensagem
+                        pelo WhatsApp informando:
+                    </p>
+
+                </div>
+
+
+                <ul class="agenda-text-list">
+
+                    <li>
+                        <strong>Data:</strong>
+                        dia em que deseja realizar o procedimento.
+                    </li>
+
+                    <li>
+                        <strong>Horário:</strong>
+                        período de sua preferência.
+                    </li>
+
+                    <li>
+                        <strong>Procedimento:</strong>
+                        técnica desejada, como Volume Brasileiro,
+                        Fio a Fio, Tufos de Seda ou Tufos de Nó.
+                    </li>
+
+                </ul>
+
+
+                <div class="agenda-example">
+
+                    <span>✧ Exemplo de mensagem</span>
+
+                    "Oi, Grazi! Quero agendar para o dia
+                    15/12 às 15h — Volume Brasileiro."
+
+                </div>
+
+
+                <p class="agenda-description">
+                    As mensagens serão respondidas por ordem de chegada.
+                    Aguarde a confirmação do seu horário.
+                </p>
+
+            </div>
+
+
+            <!-- 04. REGRAS -->
+
+            <div class="agenda-box">
+
+                <div class="agenda-box-heading">
+
+                    <span class="eyebrow">04 — DIRETRIZES</span>
+
+                    <h2>Protocolo de Agendamento</h2>
+
+                    <p class="agenda-description">
+                        Para garantir uma experiência organizada e
+                        confortável para todas, pedimos atenção às
+                        seguintes orientações:
+                    </p>
+
+                </div>
+
+
+                <ul class="agenda-text-list">
+
+                    <li>
+                        <strong>Sinal:</strong>
+                        Para reservar o horário será necessário o pagamento
+                        de R$ 20,00, descontado do valor final.
+                    </li>
+
+                    <li>
+                        <strong>Atrasos:</strong>
+                        Tolerância máxima de 15 minutos. Após esse período,
+                        o atendimento poderá ser cancelado e o sinal não
+                        será devolvido.
+                    </li>
+
+                    <li>
+                        <strong>Remarcações e cancelamentos:</strong>
+                        Devem ser comunicados com no mínimo 48h de antecedência.
+                        Faltas ou cancelamentos em cima da hora resultam
+                        na perda do sinal.
+                    </li>
+
+                    <li>
+                        <strong>Remoção de extensão:</strong>
+                        Disponível somente até o dia 15/12.
+                    </li>
+
+                    <li>
+                        <strong>Preparação:</strong>
+                        Venha sem maquiagem, rímel ou qualquer tipo
+                        de produto no rosto e nos cílios.
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- 05. PAGAMENTO E LOCALIZAÇÃO -->
+
+            <div class="agenda-box">
+
+                <div class="agenda-box-heading">
+
+                    <span class="eyebrow">05 — INFORMAÇÕES ÚTEIS</span>
+
+                    <h2>Pagamento e Localização</h2>
+
+                    <p class="agenda-description">
+                        Tudo o que você precisa saber antes
+                        de comparecer ao seu atendimento.
+                    </p>
+
+                </div>
+
+
+                <div class="agenda-grid">
+
+                    <div class="agenda-item align-left">
+
+                        <h3>Formas de Pagamento</h3>
+
+                        <p>
+                            ✧ Pix<br>
+                            ✧ Dinheiro
+                        </p>
+
+                    </div>
+
+
+                    <div class="agenda-item align-left">
+
+                        <h3>Endereço do Studio</h3>
+
+                        <p>
+                            Rua Diamante, 91<br>
+                            Jardim Paraíso
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- CHAMADA FINAL -->
+
+            <div class="agenda-final" id="agendar">
+
+                <span class="eyebrow">
+                    SEU OLHAR MERECE ESSE CUIDADO
+                </span>
+
+                <h2>Não deixe para a última hora.</h2>
+
+                <p>
+                    Garanta seu horário e prepare-se para
+                    celebrar o fim de ano com um olhar impecável.
+                </p>
+
+                <a
+                    href="https://wa.me/5521981272606?text=Ol%C3%A1!%20Gostaria%20de%20verificar%20a%20disponibilidade%20na%20agenda%20de%20fim%20de%20ano!"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="gold-button">
+
+                    Garantir meu horário
+                    <span>→</span>
+
+                </a>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+    <!-- ==============================
+         RODAPÉ
+    ============================== -->
+
+    <footer class="footer">
+
+        <div class="container footer-content">
+
+            <a href="index.html#inicio" class="footer-brand">
+
+                <img src="../assets/logo.png" alt="Grazi Gomes Lash Studio">
+
+                <span>
+                    GRAZI GOMES
+                    <small>LASH STUDIO</small>
+                </span>
+
+            </a>
+
+
+            <div class="footer-links">
+
+                <a href="index.html#inicio">Início</a>
+                <a href="index.html#sobre">Sobre</a>
+                <a href="index.html#servicos">Serviços</a>
+                <a href="index.html#contato">Contato</a>
+
+            </div>
+
+
+            <p class="copyright">
+                © 2026 Grazi Gomes Lash Studio.
+                Todos os direitos reservados.
+            </p>
+
+
+            <a href="#" class="developer">
+                Desenvolvido por <strong>KERVØ Studio</strong>
+            </a>
+
+        </div>
+
+    </footer>
+
+
+    <!-- ==============================
+         MENU MOBILE
+    ============================== -->
+
+    <script>
+
+        const menuToggle = document.getElementById('menu-toggle');
+        const navigation = document.getElementById('navigation');
+
+        menuToggle.addEventListener('click', () => {
+
+            const isActive = navigation.classList.toggle('active');
+
+            menuToggle.setAttribute(
+                'aria-expanded',
+                isActive
+            );
+
+        });
+
+        navigation.querySelectorAll('a').forEach(link => {
+
+            link.addEventListener('click', () => {
+
+                navigation.classList.remove('active');
+
+                menuToggle.setAttribute(
+                    'aria-expanded',
+                    'false'
+                );
+
+            });
+
+        });
+
+    </script>
+
+
+    <!-- ==============================
+         WHATSAPP FLUTUANTE
+    ============================== -->
+
+    <a
+        href="https://wa.me/5521981272606?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20hor%C3%A1rio!"
+        class="whatsapp-float"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Agendar pelo WhatsApp">
+
+        <span style="font-size:30px;">☏</span>
+
+    </a>
+
+
+    <!-- INSTAGRAM FLUTUANTE -->
+
+    <a
+        href="https://www.instagram.com/grazi.lashesbeauty/"
+        class="instagram-float"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Visite nosso Instagram"
+        style="
+            position:fixed;
+            bottom:105px;
+            right:25px;
+            width:65px;
+            height:65px;
+            background:linear-gradient(45deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5);
+            color:white;
+            border-radius:50%;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            text-decoration:none;
+            z-index:999999;
+            box-shadow:0 4px 15px rgba(0,0,0,0.3);
+        ">
+
+        <svg
+            width="34"
+            height="34"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="white"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round">
+
+            <rect x="3" y="3" width="18" height="18" rx="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17.5" cy="6.5" r="0.8" fill="white"/>
+
+        </svg>
+
+    </a>
+
+</body>
+</html>
